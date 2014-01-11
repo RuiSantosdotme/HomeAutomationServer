@@ -39,8 +39,8 @@ char server[] = "www.homeautomationserver.com";
 
 //keep HTTP/1.1 at the end. this is telling it what type of file it is
 //Replace the XXXXXXXXXXXXXX with your unique user_key
-//String location = "/f/XXXXXXXXXXXXXX.txt HTTP/1.1";
-String location = "/f/dojghnpx37ykci1.txt HTTP/1.1";
+String location = "/f/XXXXXXXXXXXXXX.txt HTTP/1.1";
+
 
 // if need to change the MAC address (Very Rare)
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
@@ -76,7 +76,9 @@ void setup(){
   pinMode(home_door, OUTPUT);
   //webcam servos
   baseServo.attach(8);      // attaches the servo on pin 8 to the servo object 
-  topServo.attach(9);       // attaches the servo on pin 9 to the servo object 
+  topServo.attach(9);       // attaches the servo on pin 9 to the servo object
+  
+ /******You need to edit all the servos positions to fit your webcam setup!******/ 
   //turns the Camera to the "Center" position
   bPos=78;
   baseServo.write(bPos);              
@@ -176,6 +178,8 @@ void updateState(String pageState){
   else if(pageState=="12"){            
     digitalWrite(home_door, LOW);
   }
+  
+/******You need to edit all the servos positions to fit your webcam setup!******/
   //when the button "Camera Up" from the "Camera" is Pressed
   else if(pageState=="13" && bPos!=35){            
     for(bPos; bPos>35; bPos-=1){          // goes from 0 degrees to 180 degrees in steps of 1 degree                                     
