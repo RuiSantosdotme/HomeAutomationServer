@@ -41,7 +41,6 @@ char server[] = "www.homeautomationserver.com";
 //Replace the XXXXXXXXXXXXXX with your unique user_key
 String location = "/f/XXXXXXXXXXXXXX.txt HTTP/1.1";
 
-
 // if need to change the MAC address (Very Rare)
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 IPAddress ip(192,168,0,177);
@@ -94,7 +93,7 @@ void setup(){
     Ethernet.begin(mac, ip);
    }
   // give the Ethernet shield a second to initialize
-  delay(1000);
+  delay(5000);
 }
 
 /*******************************************************************************************
@@ -110,8 +109,8 @@ void loop(){
   //prints the state in the serial monitor
   Serial.print("Current state:  ");
   Serial.println(pageState); 
-  //wait 3.5 seconds before reconnecting again
-  delay(3500); 
+  //wait 5 seconds before reconnecting again
+  delay(5000); 
 }
 /*******************************************************************************************
  ****             Change the updateState(String pageState) function                 ********
@@ -292,9 +291,9 @@ String readState(){
     }
     
  stop_connection ++;
- //if the client is not avaibable when the stop_connection reaches 8000
+ //if the client is not avaibable when the stop_connection reaches 10000
  //it will restart the ethernet connection
- if(stop_connection > 8000){
+ if(stop_connection > 10000){
    //stops the client
    client.stop();
    delay(50);
