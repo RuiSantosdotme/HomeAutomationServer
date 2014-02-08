@@ -125,76 +125,76 @@ void loop(){
  *******************************************************************************************/
 
 void updateState(String pageState){
-  //when the button "Turn On" from the "Light #1" is Pressed
+  //when the button "Turn On" from the "Button #1" is Pressed
   if(pageState=="1"){       
     digitalWrite(light_1, HIGH);
   }
-  //when the button "Turn Off" from the "Light #1" is Pressed
+  //when the button "Turn Off" from the "Button #1" is Pressed
   else if(pageState=="2"){            
     digitalWrite(light_1, LOW);
   }
-  //when the button "Turn On" from the "Light #2" is Pressed
+  //when the button "Turn On" from the "Button #2" is Pressed
   else if(pageState=="3"){            
     digitalWrite(light_2, HIGH);
   }
-  //when the button "Turn Off" from the "Light #2" is Pressed
+  //when the button "Turn Off" from the "Button #2" is Pressed
   else if(pageState=="4"){            
     digitalWrite(light_2, LOW);
   }
-  //when the button "Turn On" from the "Light #3" is Pressed
+  //when the button "Turn On" from the "Button #3" is Pressed
   else if(pageState=="5"){            
     digitalWrite(light_3, HIGH);
   }
-  //when the button "Turn Off" from the "Light #3" is Pressed
+  //when the button "Turn Off" from the "Button #3" is Pressed
   else if(pageState=="6"){            
     digitalWrite(light_3, LOW);
   }
-  //when the button "Turn On" from the "All lights" is Pressed
+  //when the button "Turn On" from the "Button #4" is Pressed
   else if(pageState=="7"){            
     digitalWrite(light_1, HIGH);
     digitalWrite(light_2, HIGH);
     digitalWrite(light_3, HIGH);
   }
-  //when the button "Turn Off" from the "All lights" is Pressed
+  //when the button "Turn Off" from the "Button #4"" is Pressed
   else if(pageState=="8"){            
     digitalWrite(light_1, LOW);
     digitalWrite(light_2, LOW);
     digitalWrite(light_3, LOW);
   }
-  //when the button "Open" from the "Garage Door" is Pressed
+  //when the button "Turn On" from the "Button #5" is Pressed
   else if(pageState=="9"){            
     digitalWrite(garage_door, HIGH);
   }
-  //when the button "Close" from the "Garage Door" is Pressed
+  //when the button "Turn Off" from the "Button #5" is Pressed
   else if(pageState=="10"){            
     digitalWrite(garage_door, LOW);
   }
-  //when the button "Open" from the "Home Door" is Pressed
+  //when the button "Turn On" from the "Button #6" is Pressed
   else if(pageState=="11"){            
     digitalWrite(home_door, HIGH);
   }
-  //when the button "Close" from the "Home Door" is Pressed
+  //when the button "Turn Off" from the "Button #6" is Pressed
   else if(pageState=="12"){            
     digitalWrite(home_door, LOW);
   }
   
 /******You need to edit all the servos positions to fit your webcam setup!******/
   //when the button "Camera Up" from the "Camera" is Pressed
-  else if(pageState=="13" && bPos!=35){            
+  else if(pageState=="25" && bPos!=35){            
     for(bPos; bPos>35; bPos-=1){          // goes from 0 degrees to 180 degrees in steps of 1 degree                                     
       baseServo.write(bPos);              // tell servo to go to position in variable 'bPos' 
       delay(20);                          // waits 20ms for the servo to reach the position 
     } 
   }
   //when the button "Camera Down" from the "Camera" is Pressed
-  else if(pageState=="14" && bPos!=120){     
+  else if(pageState=="26" && bPos!=120){     
     for(bPos; bPos < 120; bPos += 1){     // goes from 0 degrees to 180 degrees    in steps of 1 degree 
       baseServo.write(bPos);              // tell servo to go to position in variable 'bPos' 
       delay(20);                          // waits 20ms for the servo to reach the position 
     }      
   }
   //when the button "Camera left" from the "Camera" is Pressed
-  else if(pageState=="15" && tPos!=20){  
+  else if(pageState=="27" && tPos!=20){  
      for(tPos; tPos>20; tPos-=1){         // goes from 0 degrees to 180 degrees on steps of 1 degree                                        
         topServo.write(tPos);             // tell servo to go to position in variable 'tPos' 
         delay(20);                        // waits 20ms for the servo to reach the position 
@@ -202,7 +202,7 @@ void updateState(String pageState){
    
   }
   //when the button "Center" from the "Camera" is Pressed
-  else if(pageState=="16"){   
+  else if(pageState=="28"){   
     bPos=78;
     baseServo.write(bPos);              
     delay(50);                        
@@ -211,7 +211,7 @@ void updateState(String pageState){
     delay(50);       
   }
   //when the button "Camera Right" from the "Camera" is Pressed
-  else if(pageState=="17" && tPos!=140){            
+  else if(pageState=="29" && tPos!=140){            
      for(tPos; tPos < 140; tPos += 1){     // goes from 0 degrees to 180 degrees in steps of 1 degree                                        
         topServo.write(tPos);              // tell servo to go to position in variable 'tPos' 
         delay(20);                         // waits 20ms for the servo to reach the position 
